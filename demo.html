@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <meta charset=utf-8>
+    <title>solid-sug</title>
+    <style>
+        .mysug {
+            width: 240px;
+            height: 24px;
+            position: relative;
+        }
+        .s-sug-input {
+            width: 100%;
+            height: 100%;
+        }
+        .s-sug-layer {
+            display: block;
+            width: 100%;
+            position: absolute;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid 2px;
+            top: 100%;
+        }
+        .s-sug-item {
+            padding: 0.3em 0.8em;
+        }
+    </style>
+    <script src="lib/angular.js"></script>
+    <script src="directive.js"></script>
+    <body ng-app="solid-sug">
+        <div>{{keyword}},{{value}}</div>
+        <s-sug class="mysug" placeholder="输入关键字"
+            s-sug-model="keyword"
+            s-sug-value-model="value"
+            s-sug-url="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=:KEYWORD&json=1&p=3&sid=18881_19140_1431_19289_13290_18205_17000_15064_11789_18089_18016&req=2&sc=eb&csor=0&cb=:CALLBACK&_=:TIME"
+            s-sug-type="jsonp"
+            s-sug-data-key="g"
+            s-sug-text-key="q"
+            s-sug-value-key="t"
+            s-sug-export=""
+            ></s-sug>
+    </body>
+</html>
